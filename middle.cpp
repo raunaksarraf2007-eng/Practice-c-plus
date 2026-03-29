@@ -66,6 +66,13 @@ public:
         }
              cout << "NULL" << endl;
     }
+    void pop_front(){
+        Node*temp=head;
+        temp=temp->next;
+        Node*del=head;
+        head=temp;
+        free(del);
+    }
     void add_point(int pos,int value){
         Node*temp=head;
          Node*newnode=new Node(value);
@@ -96,5 +103,8 @@ int main(){
     List.push_back(80);
      List.display();
      List.middle();
+     List.pop_front();
+     cout<<"\n";
+     List.display();
     return 0;
 }
